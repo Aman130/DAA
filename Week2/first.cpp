@@ -47,7 +47,7 @@ int main()
         int l=lowerBound(arr,0,n-1,f);
         int r=upperBound(arr,0,n-1,f);
         if(r-l-1==0) cout<<"Not Present";
-        else cout<<"Present"<<r-l-1<<"\n";
+        else cout<<"Present "<<r-l-1<<"\n";
     }
     return 0;
 }
