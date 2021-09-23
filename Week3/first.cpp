@@ -16,20 +16,19 @@ int main()
             cin>>a[i];
         }
         int comparison=0,swaps=0;
-        for (int i=1;i<n;i++)
+        for(int i=0;i<n-1;i++)
         {
-            int key=a[i];
-            int j=i-1;
-            while(j>=0 && a[j]>key)
+            int minind=i;
+            for(int j=i+1;j<n;j++)
             {
                 comparison++;
-                swaps++;
-                a[j+1]=a[j];
-                j=j-1;
+                if(a[j]<a[minind])
+                minind=j;
             }
-            //if(j==-1) comparison--;
+            int temp=a[minind];
+            a[minind]=a[i];
+            a[i]=temp;
             swaps++;
-            a[j+1]=key;
         }
         for(int i=0;i<n;i++) cout<<a[i]<<" ";
         cout<<"\n";
